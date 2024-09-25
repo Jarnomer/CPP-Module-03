@@ -2,11 +2,12 @@
 
 ClapTrap::ClapTrap(std::string name)
     : name(name), damage(0), health(10), energy(10) {
-  std::cout << "ClapTrap constructor called" << std::endl;
+  std::cout << "ClapTrap (" << name << ") constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void) {
-  std::cout << "ClapTrap deconstructor called" << std::endl;
+  std::cout << "ClapTrap (" << getName() << ") deconstructor called"
+            << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {

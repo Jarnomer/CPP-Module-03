@@ -2,16 +2,14 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
-  ClapTrap ct("Trappy");
-  ct.attack("Unknown");
-  ct.takeDamage(5);
-  ct.beRepaired(5);
-  ct.takeDamage(20);
-  ct.attack("Unknown");
-  { ClapTrap duplicate = ct; }
+  ClapTrap claptrap("Clappy");
+  ScavTrap scavtrap("Scavvy");
+  scavtrap.attack(claptrap.getName());
+  scavtrap.guardGate();
+  { ScavTrap duplicate = scavtrap; }
   {
-    ClapTrap trap("Truppy");
-    trap = ct;
+    ScavTrap trap("AnotherScavvy");
+    trap = scavtrap;
   }
   return 0;
 }

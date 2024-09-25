@@ -2,14 +2,15 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
-  std::cout << "ScavTrap constructor called" << std::endl;
+  std::cout << "ScavTrap (" << name << ") constructor called" << std::endl;
   setDamage(20);
   setHealth(100);
   setEnergy(50);
 }
 
 ScavTrap::~ScavTrap(void) {
-  std::cout << "ScavTrap deconstructor called" << std::endl;
+  std::cout << "ScavTrap (" << getName() << ") deconstructor called"
+            << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
@@ -45,6 +46,6 @@ void ScavTrap::attack(const std::string &target) {
 
 void ScavTrap::guardGate(void) {
 
-  std::cout << "ScavTrap " << getName() << "is now in gate keeper mode"
+  std::cout << "ScavTrap " << getName() << " is now in gate keeper mode"
             << std::endl;
 }
