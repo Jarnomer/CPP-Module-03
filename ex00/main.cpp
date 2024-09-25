@@ -7,5 +7,10 @@ int main(void) {
   ct.beRepaired(5);
   ct.takeDamage(20);
   ct.attack("Unknown");
+  { ClapTrap duplicate = ct; }
+  {
+    ClapTrap trap("Truppy");
+    trap = ct;
+  }
   return 0;
 }
