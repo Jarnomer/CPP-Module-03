@@ -10,7 +10,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-  std::cout << "Copy Constructor called" << std::endl;
+  std::cout << "ClapTrap copy constructor called" << std::endl;
   name = other.name;
   damage = other.damage;
   health = other.health;
@@ -18,15 +18,15 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
-  std::cout << "Copy assignment operator called" << std::endl;
+  std::cout << "ClapTrap copy assignment operator called" << std::endl;
   if (this == &other) {
-    return (*this);
+    return *this;
   } else {
     name = other.name;
     damage = other.damage;
     health = other.health;
     energy = other.energy;
-    return (*this);
+    return *this;
   }
 }
 
@@ -63,3 +63,13 @@ void ClapTrap::beRepaired(unsigned int amount) {
               << ". Remaining energy: " << energy << std::endl;
   }
 }
+
+void ClapTrap::setName(std::string name) { this->name = name; }
+void ClapTrap::setDamage(unsigned int amount) { this->damage = amount; }
+void ClapTrap::setHealth(unsigned int amount) { this->health = amount; }
+void ClapTrap::setEnergy(unsigned int amount) { this->energy = amount; }
+
+std::string ClapTrap::getName(void) { return name; }
+int ClapTrap::getDamage(void) { return damage; }
+int ClapTrap::getHealth(void) { return health; }
+int ClapTrap::getEnergy(void) { return energy; }
